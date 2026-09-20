@@ -1,0 +1,708 @@
+DEBUG:asyncio:Using selector: EpollSelector
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Creating pipeline executor
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Scheduling automatic SAS Token renewal at epoch time: 1789853029
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:Gateway Hostname not present. Setting Hostname to: global.azure-devices-provisioning.net
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(InitializePipelineOperation): got connection args
+DEBUG:azure.iot.device.common.mqtt_transport:creating mqtt client
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+DEBUG:azure.iot.device.common.mqtt_transport:creating a SSL context
+DEBUG:azure.iot.device.common.mqtt_transport:configuring SSL context with default certs
+DEBUG:azure.iot.device.common.mqtt_transport:Created MQTT protocol client, assigned callbacks
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:InitializePipelineOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting <azure.iot.device.common.evented_callback.EventedCallback object at 0x7203e731c2f0> in callback thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Creating callback executor
+DEBUG:azure.iot.device.common.evented_callback:Callback completed with result None
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Registering with Provisioning Service...
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Enabling reception of response from Device Provisioning Service...
+DEBUG:azure.iot.device.provisioning.pipeline.mqtt_pipeline:enable_responses called
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: creating worker op of type MQTTSubscribeOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:AutoConnectStage(MQTTSubscribeOperation): Op needs connection.  Queueing this op and starting a ConnectionOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:AutoConnectStage(MQTTSubscribeOperation): calling down with Connect operation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:ConnectionStateStage(ConnectOperation): State changes DISCONNECTED -> CONNECTING. Sending op down
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): connecting
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): Starting watchdog
+DEBUG:azure.iot.device.common.mqtt_transport:connecting to mqtt broker
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+DEBUG:paho:Sending CONNECT (u1, p1, wr0, wq0, wf0, c0, k60) client_id=b'bhsv6f7s03'
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.connect returned rc=0
+DEBUG:paho:Received CONNACK (0, 0)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_mqtt_connected in pipeline thread
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:ConnectionStateStage(ConnectedEvent): State changes CONNECTING -> CONNECTED. Connection established
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:PipelineRootStage: ConnectedEvent received. Calling on_connected_handler
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_connected in callback thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: completing connect op
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): cancelling watchdog
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:ConnectOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:AutoConnectStage(MQTTSubscribeOperation): connection is complete.  Running op that triggered connection.
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Creating timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Sending down
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTSubscribeOperation): subscribing to $dps/registrations/res/#
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $dps/registrations/res/# with qos 1
+DEBUG:paho:Sending SUBSCRIBE (d0, m1) [(b'$dps/registrations/res/#', 1)]
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.subscribe returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 1
+DEBUG:paho:Received SUBACK
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 1 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTSubscribeOperation): SUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTSubscribeOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Cancelling timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: Worker op (MQTTSubscribeOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting pipeline_callback in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.provisioning.aio.async_provisioning_device_client:Successfully subscribed to Device Provisioning Service to receive responses
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RegisterOperation): Creating provisioning timeout timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): adding request 02d380e1-6b57-43eb-ad7a-47cd42a8295b to pending list
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Sending register request to PUT resource /
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on $dps/registrations/PUT/iotdps-register/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/PUT/iotdps-register/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m2), 'b'$dps/registrations/PUT/iotdps-register/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b'', ... (49 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 2
+DEBUG:paho:Received PUBACK (Mid: 2)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 2 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Finished sending register request to PUT resource /
+DEBUG:paho:Received PUBLISH (d0, q1, r0, m2), '$dps/registrations/res/202/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b&retry-after=3', ...  (94 bytes)
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/202/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b&retry-after=3
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_mqtt_message_received in pipeline thread
+DEBUG:paho:Sending PUBACK (Mid: 2)
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: message received on topic $dps/registrations/res/202/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b&retry-after=3
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning_mqtt:Received payload:b'{"operationId":"5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c","status":"assigning"}' on topic:$dps/registrations/res/202/?$rid=02d380e1-6b57-43eb-ad7a-47cd42a8295b&retry-after=3
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(ResponseEvent): Handling event with request_id 02d380e1-6b57-43eb-ad7a-47cd42a8295b
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Completing register request to PUT resource / with status 202
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestAndResponseOperation: completing without error
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RegisterOperation): Cancelling provisioning timeout timer
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): Received response with status code 202 for RegisterOperation
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): Op will transition into polling after interval 2.  Setting timer.
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): Creating polling timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting do_query_after_interval in pipeline thread
+INFO:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:RegistrationStage(RequestAndResponseOperation): polling
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RegisterOperation: creating worker op of type PollStatusOperation
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:PollingStatusStage(PollStatusOperation): Creating provisioning timeout timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): adding request facc6257-e16b-479d-8144-813a7c9e0037 to pending list
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Sending query request to GET resource /
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=facc6257-e16b-479d-8144-813a7c9e0037&operationId=5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c
+INFO:azure.iot.device.common.mqtt_transport:publishing on $dps/registrations/GET/iotdps-get-operationstatus/?$rid=facc6257-e16b-479d-8144-813a7c9e0037&operationId=5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m3), 'b'$dps/registrations/GET/iotdps-get-operationstatus/?$rid=facc6257-e16b-479d-8144-813a7c9e0037&operationId=5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c'', ... (1 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 3
+DEBUG:paho:Received PUBACK (Mid: 3)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 3 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Finished sending query request to GET resource /
+DEBUG:paho:Received PUBLISH (d0, q1, r0, m2), '$dps/registrations/res/200/?$rid=facc6257-e16b-479d-8144-813a7c9e0037', ...  (467 bytes)
+INFO:azure.iot.device.common.mqtt_transport:message received on $dps/registrations/res/200/?$rid=facc6257-e16b-479d-8144-813a7c9e0037
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_mqtt_message_received in pipeline thread
+DEBUG:paho:Sending PUBACK (Mid: 2)
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: message received on topic $dps/registrations/res/200/?$rid=facc6257-e16b-479d-8144-813a7c9e0037
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning_mqtt:Received payload:b'{"operationId":"5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c","status":"assigned","registrationState":{"registrationId":"bhsv6f7s03","createdDateTimeUtc":"2026-09-19T20:25:50.0867887Z","assignedHub":"iotc-88b83094-019e-48a1-b6c8-d4f3e2fd0c7f.azure-devices.net","deviceId":"bhsv6f7s03","status":"assigned","substatus":"initialAssignment","lastUpdatedDateTimeUtc":"2026-09-19T20:25:50.2676141Z","etag":"IjBhMDJjMzkzLTAwMDAtMDMwMC0wMDAwLTZhYWVlZmNlMDAwMCI="}}' on topic:$dps/registrations/res/200/?$rid=facc6257-e16b-479d-8144-813a7c9e0037
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(ResponseEvent): Handling event with request_id facc6257-e16b-479d-8144-813a7c9e0037
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:CoordinateRequestAndResponseStage(RequestAndResponseOperation): Completing query request to GET resource / with status 200
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RequestAndResponseOperation: completing without error
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:PollingStatusStage(PollStatusOperation): Cancelling provisioning timeout timer
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:PollingStatusStage(RequestAndResponseOperation): Received response with status code 200 for PollStatusOperation with operation id 5.d21199f17fa71180.4f79e0da-fbca-4255-85df-9164eb971e5c
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:PollStatusOperation: completing without error
+DEBUG:azure.iot.device.provisioning.pipeline.pipeline_stages_provisioning:Copying registration result from Query Status Op to Registration Op
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RegisterOperation: Worker op (PollStatusOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:RegisterOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result bhsv6f7s03
+iotc-88b83094-019e-48a1-b6c8-d4f3e2fd0c7f.azure-devices.net
+initialAssignment
+null
+assigned
+INFO:azure.iot.device.provisioning.abstract_provisioning_device_client:Successfully registered with Provisioning Service
+DEBUG:azure.iot.device.provisioning.aio.async_provisioning_device_client:Beginning pipeline shutdown operation
+DEBUG:azure.iot.device.provisioning.pipeline.mqtt_pipeline:Commencing shutdown of pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:Cancelling SAS Token update alarm
+INFO:azure.iot.device.common.mqtt_transport:Forcing paho disconnect to prevent it from automatically reconnecting
+DEBUG:paho:Sending DISCONNECT
+DEBUG:azure.iot.device.common.mqtt_transport:Done forcing paho disconnect
+DEBUG:azure.iot.device.common.mqtt_transport:Cancelling all pending operations
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:ShutdownPipelineOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+DEBUG:azure.iot.device.provisioning.aio.async_provisioning_device_client:Completed pipeline shutdown operation
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_http:Gateway Hostname not present. Setting Hostname to: iotc-88b83094-019e-48a1-b6c8-d4f3e2fd0c7f.azure-devices.net
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_http:HTTPTransportStage(InitializePipelineOperation): got connection args
+DEBUG:azure.iot.device.common.http_transport:creating a SSL context
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:InitializePipelineOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting <azure.iot.device.common.evented_callback.EventedCallback object at 0x7203e731c770> in callback thread
+DEBUG:azure.iot.device.common.evented_callback:Callback completed with result None
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:SasTokenStage: Scheduling automatic SAS Token renewal at epoch time: 1789853031
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:Gateway Hostname not present. Setting Hostname to: iotc-88b83094-019e-48a1-b6c8-d4f3e2fd0c7f.azure-devices.net
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(InitializePipelineOperation): got connection args
+DEBUG:azure.iot.device.common.mqtt_transport:creating mqtt client
+INFO:azure.iot.device.common.mqtt_transport:Creating client for connecting using MQTT over TCP
+DEBUG:azure.iot.device.common.mqtt_transport:creating a SSL context
+DEBUG:azure.iot.device.common.mqtt_transport:configuring SSL context with default certs
+DEBUG:azure.iot.device.common.mqtt_transport:Created MQTT protocol client, assigned callbacks
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:InitializePipelineOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting <azure.iot.device.common.evented_callback.EventedCallback object at 0x7203e731d8b0> in callback thread
+DEBUG:azure.iot.device.common.evented_callback:Callback completed with result None
+DEBUG:azure.iot.device.iothub.aio.loop_management:Creating new event loop - CLIENT_INTERNAL_LOOP
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:azure.iot.device.iothub.aio.async_clients:Connecting to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting ConnectOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:ConnectionStateStage(ConnectOperation): State changes DISCONNECTED -> CONNECTING. Sending op down
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): connecting
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): Starting watchdog
+DEBUG:azure.iot.device.common.mqtt_transport:connecting to mqtt broker
+INFO:azure.iot.device.common.mqtt_transport:Connect using port 8883 (TCP)
+DEBUG:paho:Sending CONNECT (u1, p1, wr0, wq0, wf0, c0, k60) client_id=b'bhsv6f7s03'
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.connect returned rc=0
+DEBUG:paho:Received CONNACK (1, 0)
+INFO:azure.iot.device.common.mqtt_transport:connected with result code: 0
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_mqtt_connected in pipeline thread
+INFO:azure.iot.device.common.pipeline.pipeline_stages_mqtt:_on_mqtt_connected called
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:ConnectionStateStage(ConnectedEvent): State changes CONNECTING -> CONNECTED. Connection established
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:PipelineRootStage: ConnectedEvent received. Calling on_connected_handler
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting _on_connected in callback thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage: completing connect op
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(ConnectOperation): cancelling watchdog
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:ConnectOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+INFO:azure.iot.device.iothub.abstract_clients:Connection State - Connected
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully connected to Hub
+DEBUG:azure.iot.device.iothub.sync_handler_manager:Creating new handler runner for handler: _on_method_request_received
+DEBUG:azure.iot.device.iothub.aio.loop_management:Creating new event loop - CLIENT_HANDLER_RUNNER_LOOP
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:azure.iot.device.iothub.aio.async_clients:Enabling feature:methods...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:enable_feature methods called
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.iothub.aio.async_handler_manager:HANDLER RUNNER (_on_method_request_received): Starting runner
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: creating worker op of type MQTTSubscribeOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Creating timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Sending down
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTSubscribeOperation): subscribing to $iothub/methods/POST/#
+INFO:azure.iot.device.common.mqtt_transport:subscribing to $iothub/methods/POST/# with qos 1
+DEBUG:paho:Sending SUBSCRIBE (d0, m1) [(b'$iothub/methods/POST/#', 1)]
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.subscribe returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 1
+DEBUG:paho:Received SUBACK
+INFO:azure.iot.device.common.mqtt_transport:suback received for 1
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 1 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTSubscribeOperation): SUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTSubscribeOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_base:OpTimeoutStage(MQTTSubscribeOperation): Cancelling timer
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: Worker op (MQTTSubscribeOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:EnableFeatureOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully enabled feature:methods
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m2), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 2
+DEBUG:paho:Received PUBACK (Mid: 2)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 2
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 2 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m3), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 3
+DEBUG:paho:Received PUBACK (Mid: 3)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 3
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 3 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m4), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 4
+DEBUG:paho:Received PUBACK (Mid: 4)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 4
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 4 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m5), 'b'devices/bhsv6f7s03/messages/events/'', ... (52 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 5
+DEBUG:paho:Received PUBACK (Mid: 5)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 5
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 5 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m6), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 6
+DEBUG:paho:Received PUBACK (Mid: 6)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 6
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 6 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m7), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 7
+DEBUG:paho:Received PUBACK (Mid: 7)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 7
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 7 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m8), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 8
+DEBUG:paho:Received PUBACK (Mid: 8)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 8
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 8 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m9), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 9
+DEBUG:paho:Received PUBACK (Mid: 9)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 9
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 9 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m10), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 10
+DEBUG:paho:Received PUBACK (Mid: 10)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 10
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 10 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m11), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 11
+DEBUG:paho:Received PUBACK (Mid: 11)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 11
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 11 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m12), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 12
+DEBUG:paho:Received PUBACK (Mid: 12)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 12
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 12 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m13), 'b'devices/bhsv6f7s03/messages/events/'', ... (52 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 13
+DEBUG:paho:Received PUBACK (Mid: 13)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 13
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 13 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+DEBUG:paho:Sending PINGREQ
+DEBUG:paho:Received PINGRESP
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m14), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 14
+DEBUG:paho:Received PUBACK (Mid: 14)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 14
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 14 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m15), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 15
+DEBUG:paho:Received PUBACK (Mid: 15)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 15
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 15 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m16), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 16
+DEBUG:paho:Received PUBACK (Mid: 16)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 16
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 16 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m17), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 17
+DEBUG:paho:Received PUBACK (Mid: 17)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 17
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 17 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m18), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 18
+DEBUG:paho:Received PUBACK (Mid: 18)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 18
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 18 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m19), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 19
+DEBUG:paho:Received PUBACK (Mid: 19)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 19
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 19 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m20), 'b'devices/bhsv6f7s03/messages/events/'', ... (52 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 20
+DEBUG:paho:Received PUBACK (Mid: 20)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 20
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 20 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m21), 'b'devices/bhsv6f7s03/messages/events/'', ... (50 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 21
+DEBUG:paho:Received PUBACK (Mid: 21)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 21
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 21 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m22), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 22
+DEBUG:paho:Received PUBACK (Mid: 22)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 22
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 22 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+INFO:azure.iot.device.iothub.aio.async_clients:Sending message to Hub...
+DEBUG:azure.iot.device.iothub.pipeline.mqtt_pipeline:Starting SendD2CMessageOperation on the pipeline
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting run_op in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: creating worker op of type MQTTPublishOperation
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): publishing on devices/bhsv6f7s03/messages/events/
+INFO:azure.iot.device.common.mqtt_transport:publishing on devices/bhsv6f7s03/messages/events/
+DEBUG:paho:Sending PUBLISH (d0, q1, r0, m23), 'b'devices/bhsv6f7s03/messages/events/'', ... (51 bytes)
+DEBUG:azure.iot.device.common.mqtt_transport:_mqtt_client.publish returned rc=0
+DEBUG:azure.iot.device.common.mqtt_transport:Waiting for response on MID: 23
+DEBUG:paho:Received PUBACK (Mid: 23)
+INFO:azure.iot.device.common.mqtt_transport:payload published for 23
+DEBUG:azure.iot.device.common.mqtt_transport:Response received for recognized MID: 23 - triggering callback
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in pipeline thread
+DEBUG:azure.iot.device.common.pipeline.pipeline_stages_mqtt:MQTTTransportStage(MQTTPublishOperation): PUBACK received. completing op.
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:MQTTPublishOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: Worker op (MQTTPublishOperation) has been completed
+DEBUG:azure.iot.device.common.pipeline.pipeline_ops_base:SendD2CMessageOperation: completing without error
+DEBUG:azure.iot.device.common.pipeline.pipeline_thread:Starting on_complete in callback thread
+DEBUG:azure.iot.device.common.async_adapter:Callback completed with result None
+INFO:azure.iot.device.iothub.aio.async_clients:Successfully sent message to Hub
+Conectado a IoT Central desde la VM ✅
+Enviando telemetría: {'HeartRate': 65, 'Temperature': 37.34, 'SPO2': 95}
+Enviando telemetría: {'HeartRate': 99, 'Temperature': 36.03, 'SPO2': 96}
+Enviando telemetría: {'HeartRate': 71, 'Temperature': 36.58, 'SPO2': 99}
+Enviando telemetría: {'HeartRate': 96, 'Temperature': 37.25, 'SPO2': 100}
+Enviando telemetría: {'HeartRate': 68, 'Temperature': 36.09, 'SPO2': 98}
+Enviando telemetría: {'HeartRate': 79, 'Temperature': 37.52, 'SPO2': 92}
+Enviando telemetría: {'HeartRate': 73, 'Temperature': 37.91, 'SPO2': 93}
+Enviando telemetría: {'HeartRate': 75, 'Temperature': 37.28, 'SPO2': 95}
+Enviando telemetría: {'HeartRate': 87, 'Temperature': 37.08, 'SPO2': 93}
+Enviando telemetría: {'HeartRate': 97, 'Temperature': 36.55, 'SPO2': 94}
+Enviando telemetría: {'HeartRate': 99, 'Temperature': 37.75, 'SPO2': 93}
+Enviando telemetría: {'HeartRate': 97, 'Temperature': 36.27, 'SPO2': 100}
+Enviando telemetría: {'HeartRate': 93, 'Temperature': 37.19, 'SPO2': 95}
+Enviando telemetría: {'HeartRate': 74, 'Temperature': 36.88, 'SPO2': 94}
+Enviando telemetría: {'HeartRate': 76, 'Temperature': 37.61, 'SPO2': 96}
+Enviando telemetría: {'HeartRate': 79, 'Temperature': 37.81, 'SPO2': 99}
+Enviando telemetría: {'HeartRate': 84, 'Temperature': 37.73, 'SPO2': 97}
+Enviando telemetría: {'HeartRate': 61, 'Temperature': 37.72, 'SPO2': 91}
+Enviando telemetría: {'HeartRate': 100, 'Temperature': 37.06, 'SPO2': 99}
+Enviando telemetría: {'HeartRate': 76, 'Temperature': 37.4, 'SPO2': 90}
+Enviando telemetría: {'HeartRate': 86, 'Temperature': 36.59, 'SPO2': 95}
+Enviando telemetría: {'HeartRate': 99, 'Temperature': 37.67, 'SPO2': 90}
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/azureuser/IoTCentralSender.py", line 50, in main
+    await asyncio.sleep(5)
+  File "/usr/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/azureuser/IoTCentralSender.py", line 52, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
